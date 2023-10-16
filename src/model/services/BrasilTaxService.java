@@ -1,6 +1,7 @@
 package model.services;
 
 public class BrasilTaxService {
+
     public Double taxa(Double valor) {
         if (valor < 100d) {
             return 0.2d * valor;
@@ -8,4 +9,5 @@ public class BrasilTaxService {
             return 0.15d * valor;
         }
     }
+
 }

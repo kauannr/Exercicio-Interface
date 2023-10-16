@@ -34,7 +34,7 @@ public class App {
         aluguelService.calcularFatura(aluguel);
 
         System.out.println("FATURA:");
-        System.out.println("Pagamento basico: " + String.format("%2.f", aluguel.getFatura().getPagamentoBasico()));
+        System.out.println("Pagamento basico: " + String.format("%.2f", aluguel.getFatura().getPagamentoBasico()));
         System.out.println("Imposto: " + String.format("%.2f", aluguel.getFatura().getTaxa()));
         System.out.println("Pagamento total: " + String.format("%.2f", aluguel.getFatura().pagamentoTotal()));
 

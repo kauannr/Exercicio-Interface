@@ -14,6 +14,7 @@ public class AluguelService {
         this.precoHora = precoHora;
         this.precoDia = precoDia;
         this.brasilTaxService = brasilTaxService;
+
     }
 
     public Double getPrecoHora() {
