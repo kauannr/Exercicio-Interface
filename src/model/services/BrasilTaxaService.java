@@ -1,6 +1,6 @@
 package model.services;
 
-public class BrasilTaxService {
+public class BrasilTaxaService implements TaxaService {
 
     public Double taxa(Double valor) {
         if (valor < 100d) {

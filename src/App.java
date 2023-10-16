@@ -5,7 +5,7 @@ import java.util.Scanner;
 import model.entities.Aluguel;
 import model.entities.Veiculo;
 import model.services.AluguelService;
-import model.services.BrasilTaxService;
+import model.services.BrasilTaxaService;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -29,7 +29,7 @@ public class App {
         Double precoDia = sc.nextDouble();
         sc.nextLine();
 
-        AluguelService aluguelService = new AluguelService(precoHora, precoDia, new BrasilTaxService());
+        AluguelService aluguelService = new AluguelService(precoHora, precoDia, new BrasilTaxaService());
 
         aluguelService.calcularFatura(aluguel);
 

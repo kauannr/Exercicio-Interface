@@ -8,12 +8,12 @@ import model.entities.Fatura;
 public class AluguelService {
     private Double precoHora;
     private Double precoDia;
-    private BrasilTaxService brasilTaxService;
+    private TaxaService TaxaService;
 
-    public AluguelService(Double precoHora, Double precoDia, BrasilTaxService brasilTaxService) {
+    public AluguelService(Double precoHora, Double precoDia, TaxaService taxaService) {
         this.precoHora = precoHora;
         this.precoDia = precoDia;
-        this.brasilTaxService = brasilTaxService;
+        this.TaxaService = taxaService;
 
     }
 
@@ -33,12 +33,12 @@ public class AluguelService {
         this.precoDia = precoDia;
     }
 
-    public BrasilTaxService getBrasilTaxService() {
-        return brasilTaxService;
+    public TaxaService getTaxaService() {
+        return TaxaService;
     }
 
-    public void setBrasilTaxService(BrasilTaxService brasilTaxService) {
-        this.brasilTaxService = brasilTaxService;
+    public void setTaxaService(TaxaService taxaService) {
+        this.TaxaService = taxaService;
     }
 
     public void calcularFatura(Aluguel aluguel) {
@@ -52,7 +52,7 @@ public class AluguelService {
             pagamentoBasico = precoDia * Math.ceil((horas / 24));
         }
 
-        double taxa = brasilTaxService.taxa(pagamentoBasico);
+        double taxa = TaxaService.taxa(pagamentoBasico);
         aluguel.setFatura(new Fatura(pagamentoBasico, taxa));
     }
 
